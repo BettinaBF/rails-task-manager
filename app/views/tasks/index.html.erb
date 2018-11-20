@@ -3,9 +3,19 @@
 <% @tasks.each do |task| %>
 <ul>
   <% if task.completed %>
-  <li> [x] <%= link_to task.title, task_path(task) %> <%= link_to "delete task", tasks_delete_path(task), method: :delete %></li>
+  <li> <input type="checkbox" id="task" name="task"checked>
+    <label for="name">
+      <%= link_to task.title, task_path(task) %> <%= link_to "delete task", tasks_delete_path(task), method: :delete %>
+    </label>
+  </li>
+</div>
+  </div> </li>
   <% else%>
-   <li> [ ] <%=link_to task.title, task_path(task)%> <%= link_to "delete task", tasks_delete_path(task), method: :delete %></li>
+  <li> <input type="checkbox" id="task" name="task">
+    <label for="name">
+     <%=link_to task.title, task_path(task)%> <%= link_to "delete task", tasks_delete_path(task), method: :delete %>
+    </label>
+  </li>
   <% end %>
 </ul>
 <% end %>
