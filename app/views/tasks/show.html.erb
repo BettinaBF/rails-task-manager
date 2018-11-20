@@ -1,0 +1,25 @@
+<div class = "container">
+  <div class="row">
+    <div class="col-sm-10">
+      <h1><%= @task.title %></h1>
+    </div>
+    <div class="col-sm-2 btn">
+      <%= link_to "Edit task", tasks_edit_path %>
+    </div>
+  </div>
+  <div>
+    <p><%= @task.details %></p>
+  </div>
+  <div>
+    <% if @task.completed == false %>
+    <input type="checkbox" id="tasks" name="task">
+    <label for="tasks">This task is not completed yet</label>
+    <% elsif @task.completed == true %>
+    <input type="checkbox" id="tasks" name="task" checked>
+    <label for="tasks">This task is completed</label>
+    <% end %>
+  </div>
+   <%= link_to "back to list", tasks_path%>
+
+</div>
+
